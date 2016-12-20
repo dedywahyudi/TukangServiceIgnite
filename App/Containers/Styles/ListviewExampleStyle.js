@@ -12,9 +12,10 @@ export default StyleSheet.create({
   },
   row: {
     flex: 1,
-    backgroundColor: Colors.fire,
     marginVertical: Metrics.smallMargin,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.colorTukangDivider,
   },
   boldLabel: {
     fontWeight: 'bold',

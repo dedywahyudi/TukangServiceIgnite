@@ -28,8 +28,17 @@ class NavigationDrawer extends Component {
         openDrawerOffset={0.2}
         panCloseMask={0.2}
         negotiatePan
-        tweenHandler={(ratio) => ({
-          main: { opacity: Math.max(0.54, 1 - ratio) }
+        // tweenHandler={(ratio) => ({
+        //   main: { opacity: Math.max(0.54, 1 - ratio) }
+        // })}
+        tweenHandler={ratio => ({
+          main: {
+            opacity: 1,
+          },
+          mainOverlay: {
+            opacity: ratio / 2,
+            backgroundColor: 'black',
+          },
         })}
       >
         <DefaultRenderer navigationState={children[0]} onNavigate={this.props.onNavigate} />
