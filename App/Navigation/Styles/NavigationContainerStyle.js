@@ -17,5 +17,11 @@ export default {
   },
   rightButton: {
     color: Colors.snow
-  }
+  },
+  tabBarStyle: {
+    backgroundColor: Colors.colorTukangBlack
+  },
+  tabBarSelectedItemStyle: {
+    backgroundColor: Colors.colorTukangBlack
+  },
 }

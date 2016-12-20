@@ -21,6 +21,10 @@ import APITestingScreen from '../Containers/APITestingScreen'
 import ThemeScreen from '../Containers/ThemeScreen'
 import DeviceInfoScreen from '../Containers/DeviceInfoScreen'
 
+import TabHome from '../Containers/TabHome'
+
+import TabIcon from '../Navigation/TabIcon'
+
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
 ***************************/
@@ -42,9 +46,27 @@ class NavigationRouter extends Component {
             <Scene key='mapviewExample' component={MapviewExample} title='Mapview Example' />
             <Scene key='apiTesting' component={APITestingScreen} title='API Testing' />
             <Scene key='theme' component={ThemeScreen} title='Theme' />
-
-            {/* Custom navigation bar example */}
             <Scene key='deviceInfo' component={DeviceInfoScreen} title='Device Info' />
+            <Scene
+              key="mainTab"
+              tabs
+              tabBarStyle={Styles.tabBarStyle}
+              tabBarSelectedItemStyle={Styles.tabBarSelectedItemStyle}
+            >
+              <Scene
+                key="tabHome"
+                title="Home"
+                iconName="home"
+                icon={TabIcon}
+                initial
+              >
+                <Scene
+                  key="tabHomeStart"
+                  component={TabHome}
+                  title="Home"
+                />
+              </Scene>
+            </Scene>
           </Scene>
         </Scene>
       </Router>
