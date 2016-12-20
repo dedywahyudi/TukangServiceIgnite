@@ -1,6 +1,6 @@
 // @flow
 
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import { Colors, Metrics, ApplicationStyles } from '../../Themes/'
 
 export default StyleSheet.create({
@@ -14,45 +14,60 @@ export default StyleSheet.create({
   sectionHeader: {
     ...ApplicationStyles.darkLabel
   },
-  colorsContainer: {
+  mainColumn: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+  mainRow: {
+    // flex: 0.25,
+    // paddingTop: 10,
+    paddingBottom: Metrics.baseMargin,
+  },
+  innerColumn: {
+    flex: 1,
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center'
   },
-  backgroundContainer: {
-    position: 'relative',
-    width: 102,
-    height: 102,
-    borderWidth: 1,
-    borderColor: Colors.frost
+  innerRow: {
+    flexDirection: 'row',
+    flex: 0.3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: Metrics.baseMargin,
+    marginBottom: Metrics.baseMargin,
   },
-  backerImage: {
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    position: 'absolute',
-    resizeMode: 'stretch'
+  itemColumn: {
+    flex: 1,
   },
-  colorContainer: {
-    height: 130,
-    padding: Metrics.smallMargin,
-    marginBottom: Metrics.smallMargin
+  itemRow: {
+    marginTop: (Platform.OS === 'ios') ? 4 : 0,
   },
-  colorSquare: {
-    width: 100,
-    height: 100
+  buttonAlign: {
+    alignSelf: 'center',
+    backgroundColor: Colors.colorTukangYellow,
+    width: 60,
+    height: 60,
+    shadowRadius: 0,
+    elevation: 0,
+    marginBottom: 5,
+    borderRadius: 30,
   },
-  colorName: {
-    width: 100,
-    height: Metrics.doubleBaseMargin,
-    lineHeight: Metrics.doubleBaseMargin,
-    color: Colors.charcoal,
-    textAlign: 'center'
+  textAlign: {
+    flex: 1,
+    alignSelf: 'center',
+    fontSize: 12,
+    color: Colors.colorTukangWhite,
   },
-  fontRow: {
-    padding: Metrics.smallMargin,
-    marginHorizontal: Metrics.smallMargin,
-    color: Colors.snow
-  }
+  iconAlign: {
+    alignSelf: 'center',
+    color: Colors.colorTukangBlack,
+    fontSize: 30,
+    lineHeight: 46,
+  },
+  alignButtonCenter: {
+    alignItems: 'center',
+  },
+  iconMore: {
+    alignSelf: 'center',
+    color: Colors.colorTukangBlack,
+  },
 })

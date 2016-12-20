@@ -48,28 +48,35 @@ class NavigationRouter extends Component {
             <Scene key='theme' component={ThemeScreen} title='Theme' />
             <Scene key='deviceInfo' component={DeviceInfoScreen} title='Device Info' />
             <Scene
-              key="mainTab"
-              tabs
-              tabBarStyle={Styles.tabBarStyle}
-              tabBarSelectedItemStyle={Styles.tabBarSelectedItemStyle}
+              key="tabbar"
+              open={false}
             >
               <Scene
-                key="tabHome"
-                title="Home"
-                iconName="home"
-                icon={TabIcon}
-                initial
+                key="main"
+                tabs
+                tabBarStyle={Styles.tabBarStyle}
+                tabBarSelectedItemStyle={Styles.tabBarSelectedItemStyle}
               >
                 <Scene
-                  key="tabHomeStart"
-                  component={TabHome}
+                  key="tabHome"
+                  navigationBarStyle={Styles.navBar}
+                  iconName="home"
                   title="Home"
-                />
+                  icon={TabIcon}
+                >
+                  <Scene
+                    key="tabHomeStart"
+                    component={TabHome}
+                    title="Home"
+                    titleStyle={Styles.title}
+                    renderLeftButton={NavItems.hamburgerButton}
+                  />
+                </Scene>
+                </Scene>
               </Scene>
             </Scene>
           </Scene>
-        </Scene>
-      </Router>
+        </Router>
     )
   }
 }

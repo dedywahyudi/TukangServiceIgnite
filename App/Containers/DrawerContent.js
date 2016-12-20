@@ -50,7 +50,7 @@ class DrawerContent extends Component {
 
   handlePressTabHome = () => {
     this.toggleDrawer()
-    NavigationActions.mainTab()
+    NavigationActions.tabHome()
   }
 
   render () {

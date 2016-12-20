@@ -19,5 +19,18 @@ export default StyleSheet.create({
     marginTop: Metrics.section,
     marginRight: Metrics.baseMargin,
     alignItems: 'center'
-  }
+  },
+  container: {
+    flex: 1,
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 10,
+  },
+  icon: {
+    marginBottom: 0,
+    fontSize: 30,
+  },
 })

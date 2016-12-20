@@ -5,23 +5,23 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from './Styles/TabIcon'
-// import styles from './styles';
+import { Metrics, Colors } from '../Themes/'
 
 class TabIcon extends Component {
   render() {
     const containerStyles = {
-      backgroundColor: this.props.selected ? '#333333' : '#555555',
+      backgroundColor: this.props.selected ? Colors.colorTukangBlack  : Colors.colorTukangTabInactive,
     };
 
     const textStyles = {
-      color: this.props.selected ? '#FFCE00' : '#ffffff',
+      color: this.props.selected ? Colors.colorTukangWhite : Colors.colorTukangYellow,
     };
 
-    const iconColor = this.props.selected ? '#FFCE00' : '#ffffff';
+    const iconColor = this.props.selected ? Colors.colorTukangYellow : '#ffffff';
 
     return (
       <View style={[styles.container, containerStyles]}>
-        <Icon name={this.props.iconName} style={styles.icon} size={16} backgroundColor="transparent" color={iconColor} />
+        <Icon name={this.props.iconName} style={styles.icon} backgroundColor="transparent" color={iconColor} />
         <Text style={[styles.text, textStyles]}>{this.props.title}</Text>
       </View>
     );
